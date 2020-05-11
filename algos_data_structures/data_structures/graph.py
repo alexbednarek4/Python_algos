@@ -2,52 +2,34 @@
 
 # Creating graph using an adjacency list
 class Graph:
-    def __init__(self, graph_dict = None):
-        """
-        Initializes a graph object
-            If no dictionary or none is given, an empty 
-            dictionary will be used
-        """
-        if graph_dict == None:
-            graph_dict = {}
-        self.graph_dict = graph_dict
+    def __init__(self, Nodes):
+        self.nodes = Nodes
+        self.adj_list = {}
+        # Initialize nodes in adj list and set value as empty list
+        for node in self.nodes:
+            self.adj_list[node] = []
 
-    def vertices(self):
-        # returns vertices of graph
-        return list(self.graph_dict.keys())
+    def print_adj_list(self):
+        for node in self.nodes:
+            print(node, "->", self.adj_list[node])
     
-    def edges(self):
-        # returns edges of graph
-        return self.generate_edges()
+    def add_edge(self, u, v):
+        self.adj_list[v].append(u)
+        self.adj_list[u].append(v)
 
-    def add_vertex(self, vertex):
-        """
-        If the vertex being added isn't already in self.graph_dict, a new
-        vertex key will be added with an empty list as a value to the dictionary.
-        otherwise nothing has to be done
-        """
-        if vertex not in self.graph_dict:
-            self.graph_dict[vertex] = []
+    def degree(self, node):
+        # Degree is total number of edges coming in and out of graph
+        degree = len(self.adj_list[node])
+        return degree
 
-    def add_edge(self, edge):
-        """
-        assumes that edge is of type tuple, list or set;
-        between two vertices can be multiple edges
-        """
-        edge = set(edge)
-        (vertex1, vertex2) = tuple(edge)
-        if vertex1 in self.graph_dict:
-            self.graph_dict[vertex1].append(vertex2)
-        else:
-            self.graph_dict[vertex1] = []
 
-    def generate_edges(self):
-        edges = []
-        # For each node in graph
-        for vertex in self.graph_dict:
-            # For each neighboring node
-            for neighbor in self.graph_dict[vertex]:
-                if{neighbor, vertex} not in edges:
-                # If edge exists, append
-                    edges.append({vertex, neighbor})
-        return edges
+nodes = ["A", "B", "C", "D", "E"]
+newGraph = Graph(nodes)
+newGraph.add_edge("A", "B")
+newGraph.add_edge("A", "C")
+newGraph.add_edge("B", "D")
+newGraph.add_edge("C", "D")
+newGraph.add_edge("C", "E")
+newGraph.add_edge("D", "E")
+print(newGraph.adj_list)
+print("Degree of C: ", newGraph.degree("C"))
