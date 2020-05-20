@@ -14,3 +14,7 @@ x = str(x)
 y = int(y)
 z = float(y)
 print(type(z), z)
+
+y = [2, 4, 5, 6, 9]
+print(sum(y))
+print(sum(y[-2:]))
