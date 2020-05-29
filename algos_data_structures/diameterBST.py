@@ -20,7 +20,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution:
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
         self.ans = 1
