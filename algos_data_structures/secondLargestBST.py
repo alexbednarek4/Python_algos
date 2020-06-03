@@ -25,5 +25,4 @@ def find_second_largest(root):
             not current.right.left and 
             not current.right.right):
                 return current.value
-        
         current = current.right

@@ -26,6 +26,10 @@ print(list(filter(lambda x: x < avg, data)))
 countries = ['', 'Argentina', '', 'Brazil', 'Chile', '', 'Colombia', '', 'Ecuador', '', '', 'Venezuela']
 print(list(filter(None, countries))) # Prints non-false values
 
+
+
+
+
 #
 # numbers = [1, 2, 3, 4, 5]
 # fruits = ["Apples", "Oranges", "Grapes", "Pears"]
