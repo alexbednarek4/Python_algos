@@ -16,15 +16,21 @@ Map, Filter, Reduce in Python
 
 # Filter function: Used to select certain data from list, tuple or other collection of data
  # Find all data above average
-data = [1.3, 2.7, 0.8, 4.1, 4.3, -0.1]
-avg = statistics.mean(data)
-print(avg)
 
-print(list(filter(lambda x: x > avg, data)))
-print(list(filter(lambda x: x < avg, data)))
-# Remove missing data
-countries = ['', 'Argentina', '', 'Brazil', 'Chile', '', 'Colombia', '', 'Ecuador', '', '', 'Venezuela']
-print(list(filter(None, countries))) # Prints non-false values
+data = [1.3, 2.7, 0.8, 4.1, 4.3, -0.1]
+
+# Reverse the list!!!!!!!
+print(data[::-1])
+
+
+# avg = statistics.mean(data)
+# print(avg)
+
+# print(list(filter(lambda x: x > avg, data)))
+# print(list(filter(lambda x: x < avg, data)))
+# # Remove missing data
+# countries = ['', 'Argentina', '', 'Brazil', 'Chile', '', 'Colombia', '', 'Ecuador', '', '', 'Venezuela']
+# print(list(filter(None, countries))) # Prints non-false values
 
 
 
