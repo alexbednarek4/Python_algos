@@ -26,17 +26,17 @@ Note:
 """
 
 # Using array
-class Solution:
-    def lastStoneWeight(self, stones: List[int]) -> int:
-        while len(stones) > 1:
-            stones.sort()
-            if stones[-1] == stones[-2]:
-                stones = stones[:-2]
-            else:
-                stones[-2] = stones[-1]-stones[-2]
-                stones = stones[:-1]
-        if len(stones) == 1:
-            return stones[0]
+def lastStoneWeight(stones):
+    while len(stones) > 1:
+        stones.sort()
+        if stones[-1] == stones[-2]:
+            stones = stones[:-2]
         else:
-            return 0
+            stones[-2] = stones[-1]-stones[-2]
+            stones = stones[:-1]
+    if len(stones) == 1:
+        return stones[0]
+    else:
+        return 0
 
+print(lastStoneWeight([2,7,4,1,8,1]))
