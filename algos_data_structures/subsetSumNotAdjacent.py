@@ -23,7 +23,7 @@ def maxSubsetSumNoAdjacent(array):
 		return 0
 	elif len(array) == 1:
 		return array[0]
-	#
+        
     second = array[0]
 	first = max(array[0], array[1])
 	# iterate over array starting at index 2, until end of array
