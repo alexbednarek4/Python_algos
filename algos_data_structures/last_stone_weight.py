@@ -33,7 +33,9 @@ def lastStoneWeight(stones):
             stones = stones[:-2]
         else:
             stones[-2] = stones[-1]-stones[-2]
+            print(stones)
             stones = stones[:-1]
+            print(stones)
     if len(stones) == 1:
         return stones[0]
     else:
